@@ -1,0 +1,644 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<link rel="stylesheet" type="text/css" href="https://t1.daumcdn.net/tistory_admin/lib/lightbox/css/lightbox.min.css" /><link rel="stylesheet" type="text/css" href="https://t1.daumcdn.net/tistory_admin/assets/blog/tistory-364c9682d032414ba89c8d8eedf9723c548237d2/blogs/style/content/font.css?_version_=tistory-364c9682d032414ba89c8d8eedf9723c548237d2" /><link rel="stylesheet" type="text/css" href="https://t1.daumcdn.net/tistory_admin/assets/blog/tistory-364c9682d032414ba89c8d8eedf9723c548237d2/blogs/style/content/content.css?_version_=tistory-364c9682d032414ba89c8d8eedf9723c548237d2" /><!--[if lt IE 9]><script src="https://t1.daumcdn.net/tistory_admin/lib/jquery/jquery-1.12.4.min.js"></script><![endif]--><!--[if gte IE 9]>
+<!--><script src="https://t1.daumcdn.net/tistory_admin/lib/jquery/jquery-3.2.1.min.js"></script><!--<![endif]-->
+<script src="https://t1.daumcdn.net/tistory_admin/lib/lightbox/js/lightbox-plus-jquery.min.js"></script>
+<script>
+lightbox.options.fadeDuration = 200;
+lightbox.options.resizeDuration = 200;
+lightbox.options.wrapAround = false;
+lightbox.options.albumLabel = "%1 / %2";
+</script>
+<script>var tjQuery = jQuery.noConflict(true);</script><style type="text/css">.tt_article_useless_p_margin p {padding-top:0 !important;padding-bottom:0 !important;margin-top:0 !important;margin-bottom:0 !important;}</style><meta name="referrer" content="always"><link rel="icon" href="//t1.daumcdn.net/tistory_admin/static/top/favicon_0630.ico" /><link rel="apple-touch-icon" href="//img1.daumcdn.net/thumb/C180x180/?fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F241F093D5701E73803">
+<link rel="apple-touch-icon" sizes="76x76" href="//img1.daumcdn.net/thumb/C76x76/?fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F241F093D5701E73803">
+<link rel="apple-touch-icon" sizes="120x120" href="//img1.daumcdn.net/thumb/C120x120/?fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F241F093D5701E73803">
+<link rel="apple-touch-icon" sizes="152x152" href="//img1.daumcdn.net/thumb/C152x152/?fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F241F093D5701E73803"><meta name="description" content="1. github 로그인 후 repository 생성 Repository name 작성 Public으로 체크 2. local에 있는 폴더를 github에 연결 (원격 레파지토리 설정) 로컬 터미널에서 해당 디렉토리로 들어간다. &gt;&gt;git remote add origin..">
+
+<!-- BEGIN OPENGRAPH -->
+<link rel="canonical" href="https://bol-bbang.tistory.com/60" /><meta property="og:type" content="article"><meta property="og:url" content="https://bol-bbang.tistory.com/60" ><meta property="og:site_name" content="볼빵이의 개발일기★" ><meta property="og:title" content="React - GitHub Page에 배포하기" ><meta name="by" content="볼빵이" ><meta property="og:description" content="1. github 로그인 후 repository 생성 Repository name 작성 Public으로 체크 2. local에 있는 폴더를 github에 연결 (원격 레파지토리 설정) 로컬 터미널에서 해당 디렉토리로 들어간다. &gt;&gt;git remote add origin.." ><meta property="og:image" content="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FC5RdR%2Fbtq4z0wLw6f%2FQdep3o0bACtjjujv9ekc40%2Fimg.png" >
+<!-- END OPENGRAPH -->
+
+
+
+<!-- BEGIN TWITTERCARD -->
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@TISTORY"><meta name="twitter:title" content="React - GitHub Page에 배포하기" ><meta name="twitter:description" content="1. github 로그인 후 repository 생성 Repository name 작성 Public으로 체크 2. local에 있는 폴더를 github에 연결 (원격 레파지토리 설정) 로컬 터미널에서 해당 디렉토리로 들어간다. &gt;&gt;git remote add origin.." ><meta property="twitter:image" content="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FC5RdR%2Fbtq4z0wLw6f%2FQdep3o0bACtjjujv9ekc40%2Fimg.png" >
+<!-- END TWITTERCARD -->
+
+
+
+<!-- BEGIN DAUMAPP -->
+<meta property="dg:plink" content="https://bol-bbang.tistory.com/60" ><meta name="plink" content="https://bol-bbang.tistory.com/60" ><meta name="title" content="React - GitHub Page에 배포하기" ><meta name="article:media_name" content="볼빵이의 개발일기★" ><meta property="article:mobile_url" content="https://bol-bbang.tistory.com/m/60" ><meta property="article:pc_url" content="https://bol-bbang.tistory.com/60" ><meta property="article:mobile_view_url" content="https://bol-bbang.tistory.com/m/60" ><meta property="article:pc_view_url" content="https://bol-bbang.tistory.com/60" ><meta property="article:talk_channel_view_url" content="https://bol-bbang.tistory.com/m/60" ><meta property="article:pc_service_home" content="https://www.tistory.com" ><meta property="article:mobile_service_home" content="https://www.tistory.com/m" ><meta property="article:txid" content="3961887_60" /><meta property="article:published_time" content="2021-05-11T16:40:40+09:00" ><meta property="og:regDate" content="20210511164040" ><meta property="article:modified_time" content="2021-05-12T00:09:01+09:00" >
+<!-- END DAUMAPP -->
+
+
+
+<!-- BEGIN STRUCTURED_DATA -->
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"BlogPosting","mainEntityOfPage":{"@id":"https:\/\/bol-bbang.tistory.com\/60"},"url":"https:\/\/bol-bbang.tistory.com\/60","headline":"React - GitHub Page\uc5d0 \ubc30\ud3ec\ud558\uae30","description":"1. github \ub85c\uadf8\uc778 \ud6c4 repository \uc0dd\uc131 Repository name \uc791\uc131 Public\uc73c\ub85c \uccb4\ud06c 2. local\uc5d0 \uc788\ub294 \ud3f4\ub354\ub97c github\uc5d0 \uc5f0\uacb0 (\uc6d0\uaca9 \ub808\ud30c\uc9c0\ud1a0\ub9ac \uc124\uc815) \ub85c\uceec \ud130\ubbf8\ub110\uc5d0\uc11c \ud574\ub2f9 \ub514\ub809\ud1a0\ub9ac\ub85c \ub4e4\uc5b4\uac04\ub2e4. >>git remote add origin..","author":{"@type":"Person","name":"\ubcfc\ube75\uc774"},"image":{"@type":"ImageObject","url":"https:\/\/img1.daumcdn.net\/thumb\/R800x0\/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FC5RdR%2Fbtq4z0wLw6f%2FQdep3o0bACtjjujv9ekc40%2Fimg.png","width":"800px","height":"800px"},"datePublished":"20210511T16:40:40+09:00","dateModified":"20210512T00:09:01+09:00","publisher":{"@type":"Organization","name":"TISTORY","logo":{"@type":"ImageObject","url":"https:\/\/t1.daumcdn.net\/tistory_admin\/static\/images\/openGraph\/opengraph.png","width":"800px","height":"800px"}}}</script><meta name="robots" content="max-image-preview:large">
+<!-- END STRUCTURED_DATA -->
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+<title>React - GitHub Page에 배포하기</title>
+<link rel="stylesheet" href="https://tistory4.daumcdn.net/tistory/3961887/skin/style.css?_T_=1621585157">
+<link rel="stylesheet" href="./style.css">
+<script src="//t1.daumcdn.net/tistory_admin/lib/jquery/jquery-1.12.4.min.js"></script>
+
+<style type="text/css">
+		#daumSearchBox {
+			height: 21px;
+			background-image : url(//i1.daumcdn.net/imgsrc.search/search_all/show/tistory/plugin/bg_search2_2.gif);
+			margin: 5px auto ;
+			padding: 0;
+		}
+		#daumSearchBox input {
+			background: none;
+			margin : 0;
+			padding : 0;
+			border : 0;
+		}
+		#daumSearchBox #daumLogo {
+			width: 34px;
+			height: 21px;
+			float: left;
+			margin-right: 5px;
+			background-image : url(//i1.daumcdn.net/img-media/tistory/img/bg_search1_2_2010ci.gif);
+		}
+		#daumSearchBox #show_q {
+			background-color: transparent;
+			border: none;
+			font: 12px Gulim, Sans-serif;
+			color: #555;
+			margin-top: 4px;
+			margin-right: 15px;
+			float: left;
+		}
+
+		#daumSearchBox #show_btn {
+			background-image : url(//i1.daumcdn.net/imgsrc.search/search_all/show/tistory/plugin/bt_search_2.gif);
+			width: 37px;
+			height: 21px;
+			float: left;
+			margin:0;
+			cursor:pointer;
+			text-indent:-1000em;
+		}
+	</style>
+<link rel="stylesheet" type="text/css" href="https://t1.daumcdn.net/tistory_admin/assets/blog/tistory-364c9682d032414ba89c8d8eedf9723c548237d2/blogs/plugins/TistoryProfileLayer/style.css?_version_=tistory-364c9682d032414ba89c8d8eedf9723c548237d2" />
+<script type="text/javascript" src="https://t1.daumcdn.net/tistory_admin/assets/blog/tistory-364c9682d032414ba89c8d8eedf9723c548237d2/blogs/plugins/TistoryProfileLayer/profile.js?_version_=tistory-364c9682d032414ba89c8d8eedf9723c548237d2"></script>
+	<style type="text/css">
+		.another_category { border: 1px solid #E5E5E5; padding: 10px 10px 5px; margin:10px 0; clear: both; }
+		.another_category h4 { font-size: 12px !important; margin: 0 !important; border-bottom: 1px solid #E5E5E5 !important; padding: 2px 0 6px !important; }
+		.another_category h4 a { font-weight: bold !important; }
+		.another_category table { table-layout: fixed; border-collapse: collapse; width: 100% !important; margin-top: 10px !important; }
+		* html .another_category table { width: auto !important; }
+		*:first-child+html .another_category table { width: auto !important; }
+		.another_category th, .another_category td { padding: 0 0 4px !important; }
+		.another_category th { text-align: left; font-size: 12px !important; font-weight: normal;  word-break: break-all; overflow: hidden; line-height: 1.5; }
+		.another_category td { text-align: right; width: 80px; font-size: 11px; }
+		.another_category th a { font-weight: normal; text-decoration: none; border: none !important; }
+		.another_category th a.current{ font-weight: bold; text-decoration: none !important; border-bottom: 1px solid !important; }
+		.another_category th span { font-weight: normal; text-decoration: none; font: 10px Tahoma, Sans-serif; border: none !important; }
+
+		.another_category_color_gray, .another_category_color_gray h4 { border-color: #E5E5E5 !important; }
+		.another_category_color_gray * { color: #909090 !important; }
+		.another_category_color_gray th a.current{border-color:#909090 !important;}
+		.another_category_color_gray h4, .another_category_color_gray h4 a { color: #737373 !important; }
+
+
+		.another_category_color_red, .another_category_color_red h4 { border-color: #F6D4D3 !important;  }
+		.another_category_color_red * { color: #E86869 !important; }
+		.another_category_color_red th a.current{border-color:#E86869 !important;}
+		.another_category_color_red h4, .another_category_color_red h4 a { color: #ED0908 !important; }
+
+
+		.another_category_color_green, .another_category_color_green h4 { border-color: #CCE7C8 !important; }
+		.another_category_color_green * { color: #64C05B !important; }
+		.another_category_color_green th a.current{border-color:#64C05B !important;}
+		.another_category_color_green h4, .another_category_color_green h4 a { color: #3EA731 !important; }
+
+
+		.another_category_color_blue, .another_category_color_blue h4 { border-color: #C8DAF2 !important; }
+		.another_category_color_blue * { color: #477FD6 !important; }
+		.another_category_color_blue th a.current{border-color:#477FD6 !important;}
+		.another_category_color_blue h4, .another_category_color_blue h4 a { color: #1960CA !important; }
+
+
+		.another_category_color_violet, .another_category_color_violet h4 { border-color: #E1CEEC !important;  }
+		.another_category_color_violet * { color:#9D64C5 !important; }
+		.another_category_color_violet th a.current{border-color:#9D64C5 !important;}
+		.another_category_color_violet h4, .another_category_color_violet h4 a { color: #7E2CB5 !important; }
+	</style>
+<script type="text/javascript">
+        
+        window.TistoryBlog = {
+            basePath: "",
+            url: "https://bol-bbang.tistory.com",
+            tistoryUrl: "https://bol-bbang.tistory.com",
+			manageUrl: 'https://bol-bbang.tistory.com/manage',
+            token: '+QkJYYFWFM++psRPlCeu5w=='
+        };
+        var servicePath = "";
+        var blogURL = "";
+    </script>
+
+	<script> (function() { window.orgjQuery = window.jQuery; window.jQuery = tjQuery })()</script>
+    <script type="text/javascript" defer src=https://t1.daumcdn.net/tistory_admin/assets/blog/tistory-364c9682d032414ba89c8d8eedf9723c548237d2/blogs/script/reaction/reaction-button-container.min.js?_version_=tistory-364c9682d032414ba89c8d8eedf9723c548237d2></script>
+    <script> (function() { window.jQuery = window.orgjQuery; delete window.orgjQuery })()</script>
+        <script type="text/javascript" src="https://t1.daumcdn.net/tistory_admin/assets/blog/tistory-364c9682d032414ba89c8d8eedf9723c548237d2/blogs/script/_/base.js?_version_=tistory-364c9682d032414ba89c8d8eedf9723c548237d2"></script>
+        <link rel="stylesheet" type="text/css" href="https://t1.daumcdn.net/tistory_admin/assets/blog/tistory-364c9682d032414ba89c8d8eedf9723c548237d2/blogs/style/dialog.css?_version_=tistory-364c9682d032414ba89c8d8eedf9723c548237d2"/>
+            <link rel="stylesheet" type="text/css" href="//t1.daumcdn.net/tistory_admin/www/style/top/font.css">
+    <link rel="stylesheet" type="text/css" href="https://t1.daumcdn.net/tistory_admin/assets/blog/tistory-364c9682d032414ba89c8d8eedf9723c548237d2/blogs/style/postBtn.css?_version_=tistory-364c9682d032414ba89c8d8eedf9723c548237d2"/>
+        <link rel="stylesheet" type="text/css" href="https://t1.daumcdn.net/tistory_admin/assets/blog/tistory-364c9682d032414ba89c8d8eedf9723c548237d2/blogs/style/component/tistory.css?_version_=tistory-364c9682d032414ba89c8d8eedf9723c548237d2" />
+        <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script></head>
+<body id="tt-body-page" class="color-gray post-type-text paging-view-more">
+<script type="text/javascript">
+	(function() {
+		if (!window.T) {
+			window.T = {}
+		}
+		window.T.config = {"TOP_SSL_URL":"https:\/\/www.tistory.com","PREVIEW":false,"ROLE":"owner","PREV_PAGE":"\/61","NEXT_PAGE":"\/59","BLOG":{"isDormancy":false,"title":"\ubcfc\ube75\uc774\uc758 \uac1c\ubc1c\uc77c\uae30\u2605"},"NEED_COMMENT_LOGIN":false,"COMMENT_LOGIN_CONFIRM_MESSAGE":"","LOGIN_URL":"https:\/\/www.tistory.com\/auth\/login\/?redirectUrl=http%3A%2F%2Fbol-bbang.tistory.com%2F60","DEFAULT_URL":"https:\/\/bol-bbang.tistory.com","USER":{"name":"\ubcfc\ube75\uc774","homepage":"https:\/\/bol-bbang.tistory.com"},"ROLE_GROUP":"member","SUBSCRIPTION":{"status":"none","isConnected":false,"isProcessing":false,"isPending":false,"isWait":false,"isNone":true},"IS_LOGIN":true,"HAS_BLOG":true,"TOP_URL":"https:\/\/www.tistory.com","JOIN_URL":"https:\/\/www.tistory.com\/member\/join"};
+		window.appInfo = {"domain":"tistory.com","topUrl":"https:\/\/www.tistory.com","loginUrl":"https:\/\/www.tistory.com\/auth\/login","logoutUrl":"https:\/\/www.tistory.com\/auth\/logout"};
+
+        window.initData = {};
+                    initData.user = {"id":"4410655","loginId":"hh.park@kakao.com","name":"\ubcfc\ube75\uc774"};
+        
+	})();
+</script>
+
+	<script type="text/javascript" src="https://t1.daumcdn.net/tistory_admin/assets/blog/tistory-364c9682d032414ba89c8d8eedf9723c548237d2/blogs/script/owner.js?_version_=tistory-364c9682d032414ba89c8d8eedf9723c548237d2"></script>
+<script type="text/javascript" src="https://t1.daumcdn.net/tistory_admin/assets/blog/tistory-364c9682d032414ba89c8d8eedf9723c548237d2/blogs/script/blog/common.js?_version_=tistory-364c9682d032414ba89c8d8eedf9723c548237d2"></script>
+<div style="margin:0; padding:0; border:none; background:none; float:none; clear:none; z-index:0"></div>
+<div id="acc-nav">
+	<a href="#content">본문 바로가기</a>
+</div>
+<div id="wrap">
+	<header id="header">
+		<h1><a href="/">볼빵이의 개발일기★</a></h1>
+		<button type="button" class="mobile-menu"><span>메뉴</span></button>
+		<div class="menu">
+			<nav id="gnb">
+				<ul class="tt_category">
+	<li class="">
+		<a class="link_tit" href="/category">
+			분류 전체보기							<span class="c_cnt">(62)</span>
+			
+					</a>
+
+				<ul class="category_list">
+							<li class="">
+					<a class="link_item" href="/category/Java">
+						Java													<span class="c_cnt">(8)</span>
+						
+											</a>
+
+					
+				</li>
+							<li class="">
+					<a class="link_item" href="/category/Java%20Script">
+						Java Script													<span class="c_cnt">(15)</span>
+						
+											</a>
+
+					
+				</li>
+							<li class="">
+					<a class="link_item" href="/category/React">
+						React													<span class="c_cnt">(13)</span>
+						
+											</a>
+
+					
+				</li>
+							<li class="">
+					<a class="link_item" href="/category/SQL">
+						SQL													<span class="c_cnt">(0)</span>
+						
+											</a>
+
+					
+				</li>
+							<li class="">
+					<a class="link_item" href="/category/Server">
+						Server													<span class="c_cnt">(3)</span>
+						
+											</a>
+
+					
+				</li>
+							<li class="">
+					<a class="link_item" href="/category/GIT">
+						GIT													<span class="c_cnt">(2)</span>
+						
+											</a>
+
+					
+				</li>
+							<li class="">
+					<a class="link_item" href="/category/%EA%B0%9C%EB%B0%9C%EC%9D%BC%EA%B8%B0">
+						개발일기													<span class="c_cnt">(19)</span>
+						
+											</a>
+
+										<ul class="sub_category_list">
+													<li class="">
+								<a class="link_sub_item" href="/category/%EA%B0%9C%EB%B0%9C%EC%9D%BC%EA%B8%B0/%EA%B0%9C%EC%9D%B8%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20-%20%EC%8A%A4%EC%BC%80%EC%A5%B4%EB%9F%AC">
+									개인 프로젝트 - 스케쥴러
+																			<span class="c_cnt">(2)</span>
+									
+																	</a>
+							</li>
+													<li class="">
+								<a class="link_sub_item" href="/category/%EA%B0%9C%EB%B0%9C%EC%9D%BC%EA%B8%B0/Node.js%20%EA%B3%B5%EB%B6%80%ED%95%98%EA%B8%B0">
+									Node.js 공부하기
+																			<span class="c_cnt">(17)</span>
+									
+																	</a>
+							</li>
+											</ul>
+					
+				</li>
+					</ul>
+			</li>
+</ul>
+			</nav>
+			<div class="social-link">
+				
+				
+				
+				
+			</div>
+			<p>POWERED BY TISTORY</p>
+		</div>
+		<div class="search">
+			
+					<input type="text" name="search" value="" placeholder="검색내용을 입력하세요." onkeypress="if (event.keyCode == 13) { try{window.location.href='/search/'+looseURIEncode(document.getElementsByName('search')[0].value);document.getElementsByName('search')[0].value='';return false;}catch(e){} }">
+					<button type="submit" onclick="try{window.location.href='/search/'+looseURIEncode(document.getElementsByName('search')[0].value);document.getElementsByName('search')[0].value='';return false;}catch(e){}">검색</button>
+				
+		</div>
+	</header>
+	<hr>
+	<section class="container">
+		<div class="tocWrap">
+			<nav class="toc">
+				<label class="title">목차</label>
+				<ul>
+				</ul>
+			</nav>
+		</div>
+		<article id="content">
+			
+
+			
+
+			
+
+			
+
+			<div class="inner">
+				
+
+				
+					
+					
+						<div class="hgroup">
+							<div class="category">React</div>
+							<h1>React - GitHub Page에 배포하기 </h1>
+							<div class="post-meta">
+								<span class="author">볼빵이</span>
+								<span class="date">2021. 5. 11. 16:40</span>
+								
+									<span><a href="https://bol-bbang.tistory.com/manage/post/60?returnURL=https%3A%2F%2Fbol-bbang.tistory.com%2F60">수정</a></span>
+									<span><a href="#" onclick="deleteEntry(60); return false;">삭제</a></span>
+								
+							</div>
+						</div>
+						<div class="entry-content">
+							<div class="tt_article_useless_p_margin contents_style"><p>&nbsp;</p>
+<h1>h1. github 사용</h1>
+								<p>&nbsp;</p>
+<h2>1. github 로그인 후 repository 생성</h2>
+<p><span>Repository name 작성</span></p>
+<p><span><span>Public으로 체크</span></span></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>2. local에 있는 폴더를 github에 연결 (원격 레파지토리 설정)</h2>
+<p><span><span>로컬 터미널에서 해당 디렉토리로 들어간다.</span></span></p>
+<p><span>&gt;&gt;git remote add origin <a href="https://github.com/bol-bbang/react_basic_habit_tracker.git">https://github.com/유저네임/레파지토리명.git</a></span></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>3. local에 작성된 코드 commit &amp; push</h2>
+<p>&gt;&gt;<span>git add *</span></p>
+<p><span>&gt;&gt;git commit -m "add habit tracker"</span></p>
+<p><span>&gt;&gt;git branch -M main</span></p>
+<p><span>&gt;&gt;git push -u origin main</span></p>
+<p>&nbsp;</p>
+<p>**main으로 적으면 브랜치명이 main으로 생성됨.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>4. github page 설정</h2>
+<h3><span style="color: #333333;">4-1. repository의 Settings로 들어가서 아래로 내려보면 다음와 같은 메시지가 있다.</span></h3>
+<p><span style="color: #333333;">Check it out here 클릭</span></p>
+<p><figure class='imageblock alignLeft' data-origin-width="0" data-origin-height="0" width="413" height="NaN" data-ke-mobilestyle="widthContent"><span data-url='https://blog.kakaocdn.net/dn/C5RdR/btq4z0wLw6f/Qdep3o0bACtjjujv9ekc40/img.png' data-lightbox='lightbox' data-alt=''><img src='https://blog.kakaocdn.net/dn/C5RdR/btq4z0wLw6f/Qdep3o0bACtjjujv9ekc40/img.png' srcset='https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FC5RdR%2Fbtq4z0wLw6f%2FQdep3o0bACtjjujv9ekc40%2Fimg.png' data-origin-width="0" data-origin-height="0" width="413" height="NaN" data-ke-mobilestyle="widthContent"></span></figure></p>
+<p>&nbsp;</p>
+<h3>4-2. Source 부분에서 Branch를 아까 3번에서 생성된 브랜치로 선택하고 save버튼을 누른다.</h3>
+<p>그럼 다음과 같이 내 github page url이 나온다.</p>
+<p><figure class='imageblock alignLeft' data-origin-width="0" data-origin-height="0" width="526" height="NaN" data-ke-mobilestyle="widthContent"><span data-url='https://blog.kakaocdn.net/dn/bK6Hlf/btq4Bx8WLdP/hDG1BYVwjTHvIXTK8ibrl0/img.png' data-lightbox='lightbox' data-alt=''><img src='https://blog.kakaocdn.net/dn/bK6Hlf/btq4Bx8WLdP/hDG1BYVwjTHvIXTK8ibrl0/img.png' srcset='https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbK6Hlf%2Fbtq4Bx8WLdP%2FhDG1BYVwjTHvIXTK8ibrl0%2Fimg.png' data-origin-width="0" data-origin-height="0" width="526" height="NaN" data-ke-mobilestyle="widthContent"></span></figure></p>
+<hr contenteditable="false" data-ke-type="horizontalRule" data-ke-style="style4" />
+<p>&nbsp;</p>
+<p>여기까지 했을때</p>
+<p>저 url로 접속해도 아무것도 안나온다. 404......</p>
+<p>이제부터 create-react-app의 설정을 따른다.</p>
+<p>&nbsp;</p>
+<p><span style="color: #333333;">참고 :<span>&nbsp;</span></span><a href="https://create-react-app.dev/docs/deployment#github-pages">create-react-app.dev/docs/deployment#github-pages</a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>5. pakage.json에 설정 추가</h2>
+<p>다음과 같이 <span style="color: #333333;">4번에서 만든 github page url로 </span>homepage 설정을 추가한다.</p>
+<p>"homepage": "bol-bbang.github.io/react_basic_habit_tracker/"</p>
+<p><figure class='imageblock alignLeft' data-origin-width="0" data-origin-height="0" width="409" height="NaN" data-ke-mobilestyle="widthContent"><span data-url='https://blog.kakaocdn.net/dn/n7ltW/btq4Cjo2EE0/wLBJfYglx2G3FbBwehKQNK/img.png' data-lightbox='lightbox' data-alt=''><img src='https://blog.kakaocdn.net/dn/n7ltW/btq4Cjo2EE0/wLBJfYglx2G3FbBwehKQNK/img.png' srcset='https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fn7ltW%2Fbtq4Cjo2EE0%2FwLBJfYglx2G3FbBwehKQNK%2Fimg.png' data-origin-width="0" data-origin-height="0" width="409" height="NaN" data-ke-mobilestyle="widthContent"></span></figure></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>6.&nbsp;github page용 branch 생성 &amp; deploy설정 추가</h2>
+<h3>6-1. yarn을 이용해 터미널에서 브런치 생성</h3>
+<p>&gt;&gt;yarn add gh-pages</p>
+<p>&nbsp;</p>
+<h3>6-2. gh-pages 브런치로 deploy설정 추가</h3>
+<p>pakage.json에 아래 사진의 +부분 두 줄 추가.</p>
+<p><span style="color: #333333;">predeploy는 deploy전에 자동으로 실행됨.</span></p>
+<p><figure class='imageblock alignLeft' data-origin-width="0" data-origin-height="0" width="364" height="NaN" data-ke-mobilestyle="widthContent"><span data-url='https://blog.kakaocdn.net/dn/GtTkP/btq4H1ttpjh/iRs7GhZk4nDWvi2AutxJpK/img.png' data-lightbox='lightbox' data-alt=''><img src='https://blog.kakaocdn.net/dn/GtTkP/btq4H1ttpjh/iRs7GhZk4nDWvi2AutxJpK/img.png' srcset='https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FGtTkP%2Fbtq4H1ttpjh%2FiRs7GhZk4nDWvi2AutxJpK%2Fimg.png' data-origin-width="0" data-origin-height="0" width="364" height="NaN" data-ke-mobilestyle="widthContent"></span></figure></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>7. deploy</h2>
+<p>터미널에서 아래 명령어로 gh-pages브런치를 deploy</p>
+<p>&gt;&gt;npm run deploy</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>8. github page 재설정</h2>
+<p>4번에서 설정한것과 같은 곳으로 가서 Branch를 gh-pages로 변경하고 save</p>
+<p><figure class='imageblock alignLeft' data-origin-width="0" data-origin-height="0" width="493" data-ke-mobilestyle="widthContent"><span data-url='https://blog.kakaocdn.net/dn/k2NR7/btq4BymAzIj/BMS0ZYtNL7T6fu5tGT4rK1/img.png' data-lightbox='lightbox' data-alt=''><img src='https://blog.kakaocdn.net/dn/k2NR7/btq4BymAzIj/BMS0ZYtNL7T6fu5tGT4rK1/img.png' srcset='https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fk2NR7%2Fbtq4BymAzIj%2FBMS0ZYtNL7T6fu5tGT4rK1%2Fimg.png' data-origin-width="0" data-origin-height="0" width="493" data-ke-mobilestyle="widthContent"></span></figure></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>9. github page url 접속</h2>
+<p>8번에서 저장하면 바로 업데이트가 되지 않을 수 있다.</p>
+<p>바로 url로 접속하게되면 readme 파일이 보일 수도 있으니,</p>
+<p>몇분 후 다시 접속해보자.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<hr contenteditable="false" data-ke-type="horizontalRule" data-ke-style="style6" />
+<p>&nbsp;</p>
+<h4 data-ke-size="size20">이후 코드수정이 됐을때</h4>
+<p>&nbsp;</p>
+<p><span style="color: #333333;">&gt;&gt;npm run deploy</span></p>
+<p><span style="color: #333333;">바로 deploy 명령어를 입력하면</span></p>
+<p>git에 별도로 push하지 않아도 자동으로 github page에 반영된다.</p>
+<p>&nbsp;</p>
+<p>gh-pages 브런치는</p>
+<p>build된 파일만 저장된다. (build 폴더)</p>
+<p>&nbsp;</p>
+<hr contenteditable="false" data-ke-type="horizontalRule" data-ke-style="style6" />
+<p>&nbsp;</p>
+<h1 data-ke-size="size20">** GitHub Page 사용시 주의할 점.</h1>
+<p><span style="color: #333333;">GitHub Page는 현재<span>&nbsp;</span></span><span style="color: #333333;">리액트 라우터에서 제공하는 브라우저 히스토리가 지원되지 않는다.</span></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p><div class="container_postbtn #post_button_group">
+    <div class="postbtn_like">
+        
+<script>
+    window.ReactionButtonType = 'reaction';
+    window.ReactionApiUrl = '//bol-bbang.tistory.com/reaction';
+    window.ReactionReqBody = {
+        entryId: 60    }
+</script>
+<div class="wrap_btn" id=reaction-60></div>
+<script src=https://t1.daumcdn.net/tistory_admin/assets/blog/tistory-364c9682d032414ba89c8d8eedf9723c548237d2/blogs/script/reaction/reaction-button-container.min.js?_version_=tistory-364c9682d032414ba89c8d8eedf9723c548237d2></script>
+        <div class="wrap_btn wrap_btn_share">
+    <button type="button" class="btn_post sns_btn btn_share" data-thumbnail-url="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FC5RdR%2Fbtq4z0wLw6f%2FQdep3o0bACtjjujv9ekc40%2Fimg.png" data-title="React - GitHub Page에 배포하기" data-description="1. github 로그인 후 repository 생성 Repository name 작성 Public으로 체크 2. local에 있는 폴더를 github에 연결 (원격 레파지토리 설정) 로컬 터미널에서 해당 디렉토리로 들어간다. &gt;&gt;git remote add origin.." data-profile-image="https://t1.daumcdn.net/tistory_admin/static/manage/images/r3/default_L.png" data-profile-name="볼빵이" data-pc-url="https://bol-bbang.tistory.com/60" data-relative-pc-url="/60" data-blog-title="볼빵이의 개발일기★">
+        <span class="ico_postbtn ico_share">공유하기</span>
+    </button>
+</div>
+        <div class="wrap_btn">
+    <button type="button" class="btn_post" data-entry-id="60">
+        <span class="ico_postbtn ico_statistics">통계</span>
+    </button>
+</div>
+        <div class="wrap_btn wrap_btn_etc" data-entry-id="60" data-entry-visibility="public" data-category-visibility="public">
+    <button type="button" class="btn_post btn_etc1"><span class="ico_postbtn ico_etc">글 요소</span></button>
+</div>
+    </div>
+        <div class="postbtn_ccl" data-ccl-type="">
+    <a href="https://creativecommons.org/licenses//4.0/deed.ko" target="_blank" class="link_ccl">
+        <span class="bundle_ccl">
+                    </span>
+    </a>
+</div>
+    <!--
+<rdf:RDF xmlns="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <Work rdf:about="">
+        <license rdf:resource="http://creativecommons.org/licenses/by-/2.0/kr/" />
+    </Work>
+    <License rdf:about="http://creativecommons.org/licenses/by-/">
+        <permits rdf:resource="http://web.resource.org/cc/Reproduction"/>
+        <permits rdf:resource="http://web.resource.org/cc/Distribution"/>
+        <requires rdf:resource="http://web.resource.org/cc/Notice"/>
+        <requires rdf:resource="http://web.resource.org/cc/Attribution"/>
+                    </License>
+</rdf:RDF>
+-->
+</div><div class="another_category another_category_color_gray">
+<h4>'<a href="/category/React">React</a>' 카테고리의 다른 글</h4>
+<table>
+<tr>
+<th>
+<a href="/63?category=455274" >React - 네트워크 통신 주의할 점!</a>&nbsp;&nbsp;<span>(0)</span>
+</th>
+<td>
+2021.05.18</td>
+</tr>
+<tr>
+<th>
+<a href="/61?category=455274" >React - Netlify에 배포하기</a>&nbsp;&nbsp;<span>(0)</span>
+</th>
+<td>
+2021.05.12</td>
+</tr>
+<tr>
+<th>
+<a href="/60?category=455274"  class ="current" >React - GitHub Page에 배포하기</a>&nbsp;&nbsp;<span>(0)</span>
+</th>
+<td>
+2021.05.11</td>
+</tr>
+<tr>
+<th>
+<a href="/58?category=455274" >React - React Hook (중요 포인트)</a>&nbsp;&nbsp;<span>(0)</span>
+</th>
+<td>
+2021.05.11</td>
+</tr>
+<tr>
+<th>
+<a href="/57?category=455274" >React - PureComponent &amp; memo</a>&nbsp;&nbsp;<span>(0)</span>
+</th>
+<td>
+2021.05.10</td>
+</tr>
+<tr>
+<th>
+<a href="/56?category=455274" >React - 디버깅 tip</a>&nbsp;&nbsp;<span>(0)</span>
+</th>
+<td>
+2021.05.10</td>
+</tr>
+</table></div></div>
+						</div>
+						
+
+						
+							<div class="related-articles">
+								<h2><strong>'React'</strong> Related Articles</h2>
+								<ul>
+									
+										<li>
+											<a href="/63?category=455274">
+												<span class="thum">
+													
+												</span>
+												<span class="title">React - 네트워크 통신 주의할 점!</span>
+											</a>
+										</li>
+									
+										<li>
+											<a href="/61?category=455274">
+												<span class="thum">
+													
+														<img src="//i1.daumcdn.net/thumb/C264x200/?fname=https://blog.kakaocdn.net/dn/bZAHvw/btq4HZXxWZw/C0S86gR2WMxKRachtdOD5k/img.png" alt="">
+													
+												</span>
+												<span class="title">React - Netlify에 배포하기</span>
+											</a>
+										</li>
+									
+										<li>
+											<a href="/58?category=455274">
+												<span class="thum">
+													
+														<img src="//i1.daumcdn.net/thumb/C264x200/?fname=https://blog.kakaocdn.net/dn/6F6AT/btq4DACWbJJ/GLZaiIgsGrGODQU3KTq08K/img.png" alt="">
+													
+												</span>
+												<span class="title">React - React Hook (중요 포인트)</span>
+											</a>
+										</li>
+									
+										<li>
+											<a href="/57?category=455274">
+												<span class="thum">
+													
+														<img src="//i1.daumcdn.net/thumb/C264x200/?fname=https://blog.kakaocdn.net/dn/m05oH/btq4DzRdeYC/0HgikKCb1jvSi83bcpmBok/img.png" alt="">
+													
+												</span>
+												<span class="title">React - PureComponent &amp; memo</span>
+											</a>
+										</li>
+									
+								</ul>
+							</div>
+						
+
+						<div id="entry60Comment">
+							<div class="comments">
+								
+
+								<form method="post" action="/comment/add/60" onsubmit="return false" style="margin: 0">
+									<div class="comment-form">
+										
+										<textarea name="comment" cols="" rows="4" placeholder="여러분의 소중한 댓글을 입력해주세요."></textarea>
+										<div class="submit">
+											<button type="submit" class="btn" onclick="addComment(this, 60); return false;">댓글달기</button>
+										</div>
+								</div>
+								</form>
+							</div>
+						</div><script type="text/javascript">loadedComments[60]=true;findFragmentAndHighlight(60)</script>
+
+					
+				
+			</div>
+
+			
+
+			
+
+			
+				<div class="pagination">
+					<a  href='/61' class="prev ">이전</a>
+					
+						<a  href='/63'><span >1</span></a>
+					
+						<a  href='/62'><span >2</span></a>
+					
+						<a  href='/61'><span >3</span></a>
+					
+						<a ><span class="selected">4</span></a>
+					
+						<a  href='/59'><span >5</span></a>
+					
+						<a  href='/58'><span >6</span></a>
+					
+						<a  href='/57'><span >7</span></a>
+					
+						<a  href='/56'><span >8</span></a>
+					
+						<a ><span >&middot;&middot;&middot;</span></a>
+					
+						<a  href='/1'><span >62</span></a>
+					
+					<a  href='/59' class="next ">다음</a>
+				</div>
+			
+
+		</article>
+	</section>
+	<hr>
+	
+	<footer id="footer">
+		<p class="copyright">DESIGN BY <a href="#">TISTORY</a> <a href="https://bol-bbang.tistory.com/manage" class="admin">관리자</a></p>
+	</footer>
+</div>
+<script src="https://tistory4.daumcdn.net/tistory/3961887/skin/images/script.js"></script>
+<script src="./bolbbang-toc.js"></script>
+
+<script src="//search1.daumcdn.net/search/statics/common/js/g/search_dragselection.min.js"></script>
+
+	<script>
+	    lightbox.option({
+			"fadeDuration": 200,
+		    "resizeDuration": 200,
+		    "wrapAround": false,
+			"albumLabel": "%1 / %2",
+			"fitImagesInViewport":true ,
+			"stopEvent": false
+	    })
+	</script>            <script type="text/javascript" src="//t1.daumcdn.net/tiara/js/v1/tiara.min.js"></script>
+            <script type="text/javascript">window.tiara = {"svcDomain":"user.tistory.com","section":"\uae00\ubdf0","trackPage":"\uae00\ubdf0_\ubcf4\uae30","page":"\uae00\ubdf0","key":"3961887-60","customProps":{"userId":"4410655","blogId":"3961887","role":"owner","filterTarget":false,"trackPage":"\uae00\ubdf0_\ubcf4\uae30","entryId":"60"},"entry":{"entryId":"60","categoryName":"React","categoryId":"455274","author":"4410655","authorId":"4410655","image":"4410655","plink":"\/60","tags":[],"key":"3961887-60"},"sentryDsn":"https:\/\/a53520229cd744e798d42900d76b0e2a@aem-collector.daumkakao.io\/713","kakaoAppKey":"b8aef3eeb03fa312b81795386484f051","appUserId":"1541668183"};</script>
+            <script type="text/javascript" src="https://t1.daumcdn.net/tistory_admin/assets/blog/tistory-364c9682d032414ba89c8d8eedf9723c548237d2/blogs/script/tiara/tiara.min.js?_version_=tistory-364c9682d032414ba89c8d8eedf9723c548237d2" defer></script>
+                        <script type="text/javascript">
+                window.roosevelt_params_queue = window.roosevelt_params_queue || [{channel_id: 'dk', channel_label: 'tistory'}];
+            </script>
+            <script type="text/javascript" src="//t1.daumcdn.net/midas/rt/dk_bt/roosevelt_dk_bt.js" async></script><script type="text/javascript">if(window.console!=undefined){setTimeout(console.log.bind(console,"%cTISTORY","font:8em Arial;color:#EC6521;font-weight:bold"),0);setTimeout(console.log.bind(console,"%c  나를 표현하는 블로그","font:2em sans-serif;color:#333;"),0);}</script><iframe style="position:absolute;width:1px;height:1px;left:-100px;top:-100px" src="//bol-bbang.tistory.com/api" id="editEntry"></iframe>            <div class="#menubar menu_toolbar ">
+                                            <h2 class="screen_out">티스토리툴바</h2>
+                                            
+                                       </div>
+                                       <div class="#menubar menu_toolbar "><div class='btn_tool btn_tool_type1' id='menubar_wrapper'></div></div>
+                                       <script type="text/javascript" src="https://t1.daumcdn.net/tistory_admin/assets/blog/tistory-364c9682d032414ba89c8d8eedf9723c548237d2/blogs/script/menubar.min.js?_version_=tistory-364c9682d032414ba89c8d8eedf9723c548237d2"></script>        <div class="layer_tooltip">
+            <div class="inner_layer_tooltip">
+                <p class="desc_g"></p>
+            </div>
+        </div>
+        <div id="tistoryEtcLayer" class="layer_post"></div><div id="tistorySnsLayer" class="layer_post"></div></body>
+</html>
