@@ -1,14 +1,9 @@
 /* 추가 (2021.05/22) */
-.tocWrap {
-  background: none;
-  padding: 1rem;
-  width: 13rem;
-  display: block;
-}
 .toc {
   position: fixed;
   width: 13rem;
-  height: 570px;
+  height: 530px;
+  padding: 0 1rem;
   overflow: scroll;
 }
 .toc > .title {
