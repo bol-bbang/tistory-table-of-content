@@ -16,35 +16,35 @@
   margin-bottom: 0.5rem;
   opacity: 40%;
 }
-.toc [class^="htag-"] {
+.toc [class^="htag-level"] {
   margin: 0.4rem 0;
   opacity: 40%;
   cursor: pointer;
 }
-.toc [class^="htag-"]:hover {
+.toc [class^="htag-level"]:hover {
   color: rgb(112, 31, 187);
   opacity: 100%;
   text-decoration: underline;
 }
-.toc [class^="htag-"].active {
+.toc [class^="htag-level"].active {
   color: #8e4ef5;
   opacity: 100%;
 }
-.toc .htag-h1 {
+.toc .htag-level1 {
   font-weight: 500;
   font-size: 1rem;
 }
-.toc .htag-h2 {
+.toc .htag-level2 {
   font-weight: 400;
   font-size: 0.9rem;
   margin-left: 1rem;
 }
-.toc .htag-h3 {
+.toc .htag-level3 {
   font-weight: 400;
   font-size: 0.8rem;
   margin-left: 2rem;
 }
-.toc .htag-h4 {
+.toc .htag-level4 {
   font-weight: 400;
   font-size: 0.7rem;
   margin-left: 3rem;

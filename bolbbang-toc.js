@@ -1,18 +1,32 @@
 const htag = (function(){
-
+  
   const content = document.querySelector('.entry-content');
   const array = content.querySelectorAll('.tt_article_useless_p_margin > h1, .tt_article_useless_p_margin > h2, .tt_article_useless_p_margin > h3, .tt_article_useless_p_margin > h4');
-  const tagNameArray = Array.from(array).map(item => item.tagName);
+
+
+  let highestTagNum = null;
+  const objArray = Array.from(array).map(item => {
+    
+    if(highestTagNum === null){
+      highestTagNum = parseInt(item.tagName.substr(1));
+    }else if(highestTagNum > parseInt(item.tagName.substr(1))){
+      highestTagNum = parseInt(item.tagName.substr(1));
+    }
+    
+    return { 'textContent' : item.textContent, 'tagNumber' : parseInt(item.tagName.substr(1)) };
+  })
+  .map(item => ({ ...item, level : item.tagNumber - highestTagNum + 1 }) );
   
-  return { array, tagNameArray };
+
+  return objArray;
 })();
 
 
 const setToc = (function(){
 
-  const htagList = [...htag.array];
-  const innerHtml = htagList.map((item, idx) => {
-    return `<li data-toc="${idx}" class="htag-${item.tagName.toLowerCase()}">${item.textContent}</li>`;
+  const array = [...htag];
+  const innerHtml = array.map((item, idx) => {
+    return `<li data-toc="${idx}" class="htag-level${item.level}">${item.textContent}</li>`;
   });
 
   const ul = document.querySelector('.toc > ul');
