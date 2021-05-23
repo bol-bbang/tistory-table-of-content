@@ -18,7 +18,7 @@ const htag = (function(){
   .map(item => ({ ...item, level : item.tagNumber - highestTagNum + 1 }) );
   
 
-  return { array, objArray };
+  return { array : Array.from(array), objArray };
 })();
 
 
@@ -32,11 +32,43 @@ const setToc = (function(){
   const ul = document.querySelector('.toc > ul');
   ul.innerHTML = innerHtml.join('');
   
+  /* index click event */
   ul.addEventListener('click', e => {
     if(e.target.tagName.toLocaleLowerCase() !== 'li') return;
     const toc = e.target.dataset.toc;
     array[toc].scrollIntoView();
-  })
+  });
+
+  /* setIdForHtag */  
+  array.map((item, index) => {
+    item.setAttribute('id', `htag-${index}`);
+    if(index === 0){
+      ul.querySelector(`li[data-toc="${index}"]`).classList.toggle('active');
+    }
+  });
+
+
+  window.addEventListener('scroll', function(e) {
+    
+    const current = array.reduce((pre, next) => {
+      if(pre.getBoundingClientRect().y > 0){
+        return pre;
+      }else if(pre.getBoundingClientRect().y <= 0 && next.getBoundingClientRect().y > 0){
+        return pre;
+      }else{
+        return next;
+      }
+    });
+
+    if(current){
+      /* current h-tag에 색칠하기 */
+      const number = current.getAttribute('id').replace('htag-', '');
+      if(ul.querySelector('li.active')){
+        ul.querySelector('li.active').classList.toggle('active');
+      }
+      ul.querySelector(`li[data-toc="${number}"]`).classList.toggle('active');
+    }
+  });
+
 
 })();
-
