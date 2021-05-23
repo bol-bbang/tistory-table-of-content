@@ -18,14 +18,14 @@ const htag = (function(){
   .map(item => ({ ...item, level : item.tagNumber - highestTagNum + 1 }) );
   
 
-  return objArray;
+  return { array, objArray };
 })();
 
 
 const setToc = (function(){
 
-  const array = [...htag];
-  const innerHtml = array.map((item, idx) => {
+  const { array, objArray } = {...htag};
+  const innerHtml = objArray.map((item, idx) => {
     return `<li data-toc="${idx}" class="htag-level${item.level}">${item.textContent}</li>`;
   });
 
@@ -33,9 +33,9 @@ const setToc = (function(){
   ul.innerHTML = innerHtml.join('');
   
   ul.addEventListener('click', e => {
-    if(e.target.tagName !== 'li') return;
+    if(e.target.tagName.toLocaleLowerCase() !== 'li') return;
     const toc = e.target.dataset.toc;
-    htagList[toc].scrollIntoView();
+    array[toc].scrollIntoView();
   })
 
 })();
