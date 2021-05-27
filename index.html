@@ -51,13 +51,15 @@ lightbox.options.albumLabel = "%1 / %2";
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
 <!-- and it's easy to individually load additional languages -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/languages/go.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
 <link rel="stylesheet" href="./code.css">
 <link class="codestyle" rel="stylesheet" href="./agate.css">
+<link class="codestyle" rel="stylesheet" href="./line-number.css">
 <!-- <link class="codestyle" rel="stylesheet" href="./atom-one-dark.css"> -->
 </head>
 <script>
 		hljs.highlightAll();
-
+		hljs.initLineNumbersOnLoad();
 </script>
 
 <style type="text/css">

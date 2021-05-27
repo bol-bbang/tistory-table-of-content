@@ -1,0 +1,52 @@
+/* for block of numbers */
+.hljs-ln-numbers {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  text-align: center;
+  color: #ccc;
+  border-right: 1px solid #ccc;
+  vertical-align: top;
+  padding-right: 5px;
+
+  /* your custom style here */
+}
+
+/* for block of code */
+.hljs-ln-code {
+  padding-left: 10px;
+}
+
+table.hljs-ln {
+  width: 100%;
+  margin: inherit;
+  border: inherit;
+  border-collapse: collapse;
+  text-align: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+}
+table.hljs-ln thead th {
+  padding: inherit;
+  border: inherit;
+}
+table.hljs-ln tbody td {
+  padding: inherit;
+  border: inherit;
+}
+table.hljs-ln {
+  border: none;
+}
+table.hljs-ln td:first-child {
+  width: 1.9rem;
+  border-right: 1px solid #ccc;
+  padding-right: 5px;
+}
+table.hljs-ln td:last-child {
+  padding-left: 1.5rem;
+}
