@@ -1,0 +1,11 @@
+pre {
+  padding: 1em;
+}
+
+pre code {
+  display: block;
+  max-height: 40em;
+  padding: 1em;
+  overflow-y: auto;
+  overflow-x: hidden;
+}

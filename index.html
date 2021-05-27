@@ -45,6 +45,21 @@ lightbox.options.albumLabel = "%1 / %2";
 <link rel="stylesheet" href="./bolbbang-toc.css">
 <script src="//t1.daumcdn.net/tistory_admin/lib/jquery/jquery-1.12.4.min.js"></script>
 
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/default.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+<!-- and it's easy to individually load additional languages -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/languages/go.min.js"></script>
+<link rel="stylesheet" href="./code.css">
+<link class="codestyle" rel="stylesheet" href="./agate.css">
+<!-- <link class="codestyle" rel="stylesheet" href="./atom-one-dark.css"> -->
+</head>
+<script>
+		hljs.highlightAll();
+
+</script>
+
 <style type="text/css">
 		#daumSearchBox {
 			height: 21px;
@@ -312,7 +327,34 @@ lightbox.options.albumLabel = "%1 / %2";
 							</div>
 						</div>
 						<div class="entry-content">
-							<div class="tt_article_useless_p_margin contents_style"><p>&nbsp;</p>
+							<div class="tt_article_useless_p_margin contents_style">
+
+
+<h4 data-ke-size="size20">PostCSS에서 변수활용하기</h4>
+<p data-ke-size="size16">&nbsp;</p>
+<p data-ke-size="size16">1. 변수를 할당할 파일을 따로 만든다.</p>
+<p data-ke-size="size16">2. @value (key): (value); 형식으로 변수를 할당한다.</p>
+<pre id="code_1622129827302" class="javascript" data-ke-language="javascript" data-ke-type="codeblock"><code>//colors.css
+
+@value markWhite: black;
+@value markWhite: white;
+@value markDarkWhite: #f5f5f3;</code></pre>
+<p data-ke-size="size16">3. 다른 module.css 파일에서 변수가 할당된 css파일을 import하여 사용한다.</p>
+<pre id="code_1622130110780" class="javascript" data-ke-language="javascript" data-ke-type="codeblock"><code>// index.module.css
+
+@value markBlack from './common/colors.css';
+@value markWhite from './common/colors.css';
+
+.container {
+  background-color: markBlack;
+  color: markWhite;
+}</code></pre>
+
+
+
+
+
+								<p>&nbsp;</p>
 <h1>h1. github 사용</h1>
 								<p>&nbsp;</p>
 <h2>1. github 로그인 후 repository 생성</h2>
