@@ -91,3 +91,7 @@
   color: inherit;
   text-decoration: underline;
 }
+.hljs-name,
+.hljs-subst {
+  color: #e06c75;
+}
